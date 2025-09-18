@@ -1,0 +1,11 @@
+cffi==1.17.1
+cryptography==45.0.6
+greenlet==3.2.4
+mysql-connector-python==9.4.0
+prettytable==3.16.0
+pycparser==2.22
+PyMySQL==1.1.2
+python-dotenv==1.1.1
+SQLAlchemy==2.0.43
+typing_extensions==4.15.0
+wcwidth==0.2.13

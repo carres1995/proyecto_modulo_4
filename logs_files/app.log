@@ -1,0 +1,56 @@
+2025-09-17 21:16:25,773 - INFO - Base de datos configurada correctamente en mysql+pymysql://root:admin@localhost:3306/academiacert
+2025-09-17 21:16:26,066 - INFO - Iniciando aplicación...
+2025-09-17 21:16:26,381 - INFO - Tablas verificadas/creadas correctamente.
+2025-09-17 21:19:38,865 - INFO - Base de datos configurada correctamente en mysql+pymysql://root:admin@localhost:3306/academiacert
+2025-09-17 21:19:39,046 - INFO - Iniciando aplicación...
+2025-09-17 21:19:39,119 - INFO - Tablas verificadas/creadas correctamente.
+2025-09-17 21:20:04,611 - INFO - Entrando al menú de estudiantes
+2025-09-17 21:20:04,659 - INFO - Mostrando menú de estudiantes
+2025-09-17 21:21:23,929 - INFO - Estudiante creado con ID: 3
+2025-09-17 21:21:23,931 - INFO - Estudiante agregado: None
+2025-09-17 21:21:23,932 - INFO - Estudiante agregado correctamente
+2025-09-17 21:21:23,953 - INFO - Mostrando menú de estudiantes
+2025-09-17 21:24:46,865 - INFO - Base de datos configurada correctamente en mysql+pymysql://root:admin@localhost:3306/academiacert
+2025-09-17 21:24:46,969 - INFO - Iniciando aplicación...
+2025-09-17 21:24:47,017 - INFO - Tablas verificadas/creadas correctamente.
+2025-09-17 21:24:56,490 - INFO - Entrando al menú de estudiantes
+2025-09-17 21:24:56,535 - INFO - Mostrando menú de estudiantes
+2025-09-17 21:25:02,420 - INFO - Listando estudiantes...
+2025-09-17 21:25:02,507 - WARNING - No hay estudiantes registrados.
+2025-09-17 21:25:02,507 - ERROR - Error inesperado en el menú de estudiantes: No hay estudiantes registrados.
+Traceback (most recent call last):
+  File "c:\Users\TP\Desktop\programacion\proyectos\Certificacion\proyecto modulo 4\main_t\main_estudiante.py", line 35, in menu_estudiantes
+    raise Exception("No hay estudiantes registrados.")
+Exception: No hay estudiantes registrados.
+2025-09-17 21:25:02,543 - INFO - Mostrando menú de estudiantes
+2025-09-17 21:25:23,934 - INFO - Listando estudiantes...
+2025-09-17 21:25:23,938 - WARNING - No hay estudiantes registrados.
+2025-09-17 21:25:23,938 - ERROR - Error inesperado en el menú de estudiantes: No hay estudiantes registrados.
+Traceback (most recent call last):
+  File "c:\Users\TP\Desktop\programacion\proyectos\Certificacion\proyecto modulo 4\main_t\main_estudiante.py", line 35, in menu_estudiantes
+    raise Exception("No hay estudiantes registrados.")
+Exception: No hay estudiantes registrados.
+2025-09-17 21:25:23,974 - INFO - Mostrando menú de estudiantes
+2025-09-17 21:25:26,083 - INFO - Listando estudiantes...
+2025-09-17 21:25:26,091 - WARNING - No hay estudiantes registrados.
+2025-09-17 21:25:26,091 - ERROR - Error inesperado en el menú de estudiantes: No hay estudiantes registrados.
+Traceback (most recent call last):
+  File "c:\Users\TP\Desktop\programacion\proyectos\Certificacion\proyecto modulo 4\main_t\main_estudiante.py", line 35, in menu_estudiantes
+    raise Exception("No hay estudiantes registrados.")
+Exception: No hay estudiantes registrados.
+2025-09-17 21:25:26,135 - INFO - Mostrando menú de estudiantes
+2025-09-17 21:26:02,646 - INFO - Saliendo del menú de estudiantes.
+2025-09-17 21:26:06,328 - INFO - Saliendo de la aplicación...
+2025-09-17 21:26:55,627 - INFO - Base de datos configurada correctamente en mysql+pymysql://root:admin@localhost:3306/academiacert
+2025-09-17 21:26:55,757 - INFO - Iniciando aplicación...
+2025-09-17 21:26:55,805 - INFO - Tablas verificadas/creadas correctamente.
+2025-09-17 21:26:59,613 - INFO - Entrando al menú de estudiantes
+2025-09-17 21:26:59,642 - INFO - Mostrando menú de estudiantes
+2025-09-17 21:27:01,534 - INFO - Listando estudiantes...
+2025-09-17 21:27:01,625 - WARNING - No hay estudiantes registrados.
+2025-09-17 21:27:01,625 - ERROR - Error inesperado en el menú de estudiantes: No hay estudiantes registrados.
+Traceback (most recent call last):
+  File "c:\Users\TP\Desktop\programacion\proyectos\Certificacion\proyecto modulo 4\main_t\main_estudiante.py", line 35, in menu_estudiantes
+    raise Exception("No hay estudiantes registrados.")
+Exception: No hay estudiantes registrados.
+2025-09-17 21:27:01,654 - INFO - Mostrando menú de estudiantes
