@@ -18,3 +18,6 @@ class Estudiante(Base):
     cursos = relationship("Curso", secondary=estudiante_curso, back_populates="estudiantes")
     inscripciones = relationship("Inscripcion", back_populates="estudiante")
     docentes = relationship("Docente", secondary=docente_estudiante, back_populates="estudiantes")
+    
+    def __repr__(self):
+        return (f"Estudiante(id={self.id}, " f"nombre='{self.nombre}', " f"apellido='{self.apellido}', " f"email='{self.email}')")

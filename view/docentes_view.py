@@ -9,7 +9,7 @@ def mostrar_docentes(docentes: List[Docente]):
         return
 
     tabla = PrettyTable()
-    tabla.field_names = ["ID", "Número Identificación", "Nombre", "Apellido", "Email", "Teléfono", "Especialidad"]
+    tabla.field_names = ["ID", "Número Identificacion", "Nombre", "Apellido", "Email", "Teléfono", "Especialidad"]
 
     for doc in docentes:
         tabla.add_row([
@@ -30,10 +30,9 @@ def mostrar_docente(docente: Docente):
         print("\nDocente no encontrado.\n")
         return
 
-    print(f"\nID: {docente.id}")
-    print(f"Número de Identificación: {docente.numero_identificacion}")
-    print(f"Nombre: {docente.nombre}")
-    print(f"Apellido: {docente.apellido}")
-    print(f"Email: {docente.email}")
-    print(f"Teléfono: {docente.telefono}")
-    print(f"Especialidad: {docente.especialidad}\n")
+    tabla = PrettyTable()
+    tabla.field_names = ["Campo", "Valor"]
+    for campo in ["id", "número_identificacion", "nombre", "apellido", "email", "teléfono", "especialidad"]:
+        tabla.add_row([campo, getattr(docente, campo)])
+    print(tabla)    
+

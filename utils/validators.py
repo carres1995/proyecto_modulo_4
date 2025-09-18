@@ -8,7 +8,7 @@ def validar_nombres(texto):
     if not texto.isalpha():
         logger.error("Texto incorrecto.")
         return False
-    return True
+    return texto
         
         
 def validar_identidad(id):
@@ -18,7 +18,7 @@ def validar_identidad(id):
     if len(id) < 5 or len(id) > 10:
         logger.error(f"Numero debe estar entre 5 y 10 digitos.")
         return False
-    return True
+    return id
 
 def validar_email(email):
     if "@" not in email or "." not in email:

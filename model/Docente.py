@@ -16,3 +16,6 @@ class Docente(Base):
 
     cursos = relationship("Curso", back_populates="docente")
     estudiantes = relationship("Estudiante", secondary=docente_estudiante, back_populates="docentes")
+
+    def __repr__(self):
+        return (f"Docente:\nid: {self.id}, "f"idenfificacion: {self.numero_identificacion}, "f"nombre completo: {self.nombre} {self.apellido}, "f"email: {self.email}, "f"contacto: {self.telefono}, "f"especialidad: {self.especialidad}")    

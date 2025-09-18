@@ -1,15 +1,13 @@
 from prettytable import PrettyTable
-from typing import List
 from model.Estudiante import Estudiante
 
-def mostrar_estudiantes(estudiantes: List[Estudiante]):
-    
+def mostrar_estudiantes(estudiantes: list[Estudiante]):
     if not estudiantes:
         print("\nNo hay estudiantes registrados.\n")
         return
 
     tabla = PrettyTable()
-    tabla.field_names = ["ID", "numero_identificacion", "Nombre", "Apellido", "Email"]
+    tabla.field_names = ["ID", "Número Identificación", "Nombre", "Apellido", "Email", "Teléfono", "Fecha Nacimiento"]
 
     for est in estudiantes:
         tabla.add_row([
@@ -17,20 +15,22 @@ def mostrar_estudiantes(estudiantes: List[Estudiante]):
             est.numero_identificacion,
             est.nombre,
             est.apellido,
-            est.email
+            est.email,
+            est.telefono,
+            est.fecha_nacimiento
         ])
 
     print(tabla)
-    
-def mostrar_estudiante(estudiante: Estudiante):
-    if not estudiante:
-        print("\nEstudiante no encontrado.\n")
+
+
+def mostrar_estudiante(est: Estudiante):
+    if not est:
+        print("Estudiante no encontrado.")
         return
 
-    print(f"\nID: {estudiante.id}")
-    print(f"Número de Identificación: {estudiante.numero_identificacion}")
-    print(f"Nombre: {estudiante.nombre}")
-    print(f"Apellido: {estudiante.apellido}")
-    print(f"Email: {estudiante.email}")
-    print(f"Teléfono: {estudiante.telefono}")
-    print(f"Fecha de Nacimiento: {estudiante.fecha_nacimiento.strftime('%Y-%m-%d')}\n")       
+    tabla = PrettyTable()
+    tabla.field_names = ["Campo", "Valor"]
+    for campo in ["id", "numero_identificacion", "nombre", "apellido", "email", "telefono", "fecha_nacimiento"]:
+        tabla.add_row([campo, getattr(est, campo)])
+
+    print(tabla)
