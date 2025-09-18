@@ -32,7 +32,7 @@ def mostrar_docente(docente: Docente):
 
     tabla = PrettyTable()
     tabla.field_names = ["Campo", "Valor"]
-    for campo in ["id", "número_identificacion", "nombre", "apellido", "email", "teléfono", "especialidad"]:
+    for campo in ["id", "numero_identificacion", "nombre", "apellido", "email", "telefono", "especialidad"]:
         tabla.add_row([campo, getattr(docente, campo)])
     print(tabla)    
 
