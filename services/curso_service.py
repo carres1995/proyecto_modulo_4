@@ -1,4 +1,4 @@
-from crud.curso_crud import get_curso, get_cursos, create_curso, update_curso, delete_curso
+from crud.curso_crud import get_curso, get_cursos, create_curso, update_curso, delete_curso, buscar_curso_por_nombre, contar_cursos
 from model.Curso import Curso
 from model.Docente import Docente
 from utils.logs_proyect import logger
@@ -8,12 +8,14 @@ class CursoService:
         self.db = db
 
     def mostrar_cursos(self) -> list:
+        """Obtiene y muestra todos los cursos"""
         logger.info("Listando cursos...")
         print("Listando cursos...")
         cursos = get_cursos(self.db)
         return cursos if cursos is not None else []
 
     def agregar_curso(self, codigo, nombre, descripcion, fecha_inicio, fecha_fin, docente_id=None):
+        """Agrega un nuevo curso a la base de datos"""
         try:
             curso = Curso(
                 codigo=codigo,
@@ -40,11 +42,13 @@ class CursoService:
             raise Exception(f"Error al agregar curso: {e}")
 
     def buscar_curso(self, curso_id) -> Curso | None:
+        """Busca un curso por su ID"""
         logger.info(f"Buscando curso con ID: {curso_id}")
         print(f"Buscando curso con ID: {curso_id}")
         return get_curso(self.db, curso_id)
 
     def modificar_curso(self, curso_id, codigo, nombre, descripcion, fecha_inicio, fecha_fin, docente_id=None):
+        """Modifica un curso existente"""
         try:
             data_update = {
                 "codigo": codigo,
@@ -76,6 +80,18 @@ class CursoService:
             raise Exception(f"Error al modificar curso: {e}")
 
     def eliminar_curso(self, curso_id) -> int:
+        """Elimina un curso por su ID"""
         logger.info(f"Eliminando curso con ID: {curso_id}")
         print(f"Eliminando curso con ID: {curso_id}")
         return delete_curso(self.db, curso_id)
+    
+    def buscar_curso_por_nombre(self, nombre: str):
+        logger.info(f"Buscando curso con nombre: {nombre}")
+        print(f"Buscando curso con nombre: {nombre}")
+        return buscar_curso_por_nombre(self.db, nombre)
+    
+    def conteo_cursos(self):
+        logger.info(f"Buscando numero de cursos...")
+        print("Buscando numero de cursos...")
+        n_curso = contar_cursos(self.db)
+        return n_curso if n_curso is not None else []

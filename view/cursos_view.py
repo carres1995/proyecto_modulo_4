@@ -1,15 +1,23 @@
 from prettytable import PrettyTable
-from typing import List
 from model.Curso import Curso
+from utils.logs_proyect import logger
 
-
-def mostrar_cursos(cursos: List[Curso]):
+def mostrar_cursos(cursos: list[Curso]):
+    """Muestra una tabla con todos los cursos"""
     if not cursos:
         print("\nNo hay cursos registrados.\n")
         return
 
     tabla = PrettyTable()
-    tabla.field_names = ["ID", "Código", "Nombre", "Descripción", "Fecha Inicio", "Fecha Fin", "Docente_id"]
+    tabla.field_names = [
+        "ID",
+        "Codigo",
+        "Nombre",
+        "Descripcion",
+        "Fecha Inicio",
+        "Fecha Fin",
+        "Docente ID"
+    ]
 
     for curso in cursos:
         tabla.add_row([
@@ -17,22 +25,40 @@ def mostrar_cursos(cursos: List[Curso]):
             curso.codigo,
             curso.nombre,
             curso.descripcion,
-            curso.fecha_inicio.strftime('%Y-%m-%d'),
-            curso.fecha_fin.strftime('%Y-%m-%d'),
-            curso.docente.id
+            curso.fecha_inicio,
+            curso.fecha_fin,
+            curso.docente_id if hasattr(curso, "docente_id") else "N/A"
         ])
 
     print(tabla)
 
-def mostrar_curso(curso: Curso):
+
+def mostrar_curso(curso):
+    """Muestra los datos detallados de un solo curso"""
     if not curso:
-        print("\nCurso no encontrado.\n")
+        print("Curso no encontrado.")
         return
 
-    print(f"\nID: {curso.id}")
-    print(f"Código: {curso.codigo}")
-    print(f"Nombre: {curso.nombre}")
-    print(f"Descripción: {curso.descripcion}")
-    print(f"Fecha de Inicio: {curso.fecha_inicio.strftime('%Y-%m-%d')}")
-    print(f"Fecha de Fin: {curso.fecha_fin.strftime('%Y-%m-%d')}\n")
-    print(f"Docente: {curso.docente.nombre if curso.docente else 'No asignado'}")
+    logger.info(f"Mostrando curso con ID: {curso.id}")
+
+    tabla = PrettyTable()
+    tabla.field_names = ["Campo", "Valor"]
+
+    campos = [
+        "id",
+        "codigo",
+        "nombre",
+        "descripcion",
+        "fecha_inicio",
+        "fecha_fin",
+        "docente_id"
+    ]
+
+    for campo in campos:
+        valor = getattr(curso, campo, "N/A")
+        tabla.add_row([campo, valor])
+
+    print(tabla)
+    
+def mostrar_conteo_cursos(conteo: int):
+    print(f"\nTotal de cursos registrados: {conteo}\n")    

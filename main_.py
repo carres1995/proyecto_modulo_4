@@ -4,9 +4,9 @@ from main_t.menu_principal import menu_principal
 
 if __name__ == "__main__":
     try:
-        logger.info("Iniciando aplicación...")
+        logger.info("Iniciando aplicacion...")
         init_db()
         menu_principal()
     except Exception as e:
-        logger.exception("Ocurrió un error inesperado en la aplicación: %s", str(e))
-        print(f"Ocurrió un error inesperado: {e}")
+        logger.exception("Ocurrio un error inesperado en la aplicacion: ", e)
+        print(f"Ocurrio un error inesperado: {e}")

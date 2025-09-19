@@ -13,3 +13,6 @@ class Inscripcion(Base):
 
     estudiante = relationship("Estudiante", back_populates="inscripciones")
     curso = relationship("Curso", back_populates="inscripciones")
+    
+    def __repr__(self):
+        return f"<Inscripcion(id={self.id}, estudiante_id={self.estudiante_id}, curso_id={self.curso_id}, fecha_inscripcion={self.fecha_inscripcion})>"
